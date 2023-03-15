@@ -87,8 +87,8 @@ def main():
     df = load_data()
     df_train, df_val, df_test = split(df)
     
-    model = BertForSequenceClassification.from_pretrained("finbert",num_labels=3)
-    tokenizer = BertTokenizer.from_pretrained("finbert/tokenizer")
+    model = BertForSequenceClassification.from_pretrained("yiyanghkust/finbert-tone",num_labels=3)
+    tokenizer = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone")
     
     dataset_train, dataset_val, dataset_test = prep_datasets(df_train, df_val, df_test, model, tokenizer)
     

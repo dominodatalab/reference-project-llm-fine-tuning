@@ -3,7 +3,7 @@ from transformers import BertTokenizer
 from transformers import pipeline
 
 model = BertForSequenceClassification.from_pretrained("finbert-sentiment",num_labels=3)
-tokenizer = BertTokenizer.from_pretrained("finbert/tokenizer")
+tokenizer = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone")
 nlp = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
 def predict_sentiment(sentence):
