@@ -2,7 +2,10 @@ from transformers import BertForSequenceClassification
 from transformers import BertTokenizer
 from transformers import pipeline
 
-model = BertForSequenceClassification.from_pretrained("finbert-sentiment",num_labels=3)
+# Please change the location below to where your model is stored/saved
+model_path = '/mnt/artifacts/finbert-sentiment/'
+
+model = BertForSequenceClassification.from_pretrained(model_path,num_labels=3)
 tokenizer = BertTokenizer.from_pretrained("yiyanghkust/finbert-tone")
 nlp = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer)
 
