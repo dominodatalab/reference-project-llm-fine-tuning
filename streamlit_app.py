@@ -56,36 +56,18 @@ response = requests.post(api_url,
 results.append(response.json().get('result'))
 
 ### Results ###
+result_text = "NA"
+result_prob = -1
 
-labels = []
-scores = []
-for s in results[0]:
-    labels.append(s["label"])
-    scores.append(s["score"])
-    
-df = pd.DataFrame(columns = ['label', 'score'])
-df.label = labels
-df.score = scores
-df_sorted = df.sort_values(by='score', ascending=False)
-result_text = df_sorted.label.values[0]
-result_prob = round(df_sorted.score.values[0], 4)
+if results:
+    result_text = results[0]['label']
+    result_prob = round(results[0]['score'])
     
 #################
-### VIZ ###
+### SHOW RESULTS ###
 #################
-
-#import plotly.graph_objects as go
-import plotly.express as px
-
-fig = px.bar(df, x='label', y='score',
-             hover_data=['label', 'score'], color='score', height=400, 
-             color_continuous_scale=px.colors.sequential.Viridis_r)
-
-fig.update_layout(paper_bgcolor = "#0e1117", font = {'color': "white", 'family': "Arial"})
  
 row4_spacer1, row4_1, row4_spacer2 = st.columns((.2, 7.1, .2))
 with row4_1:    
     st.subheader('The sentiment of this financial text is ' + result_text + ' with probability of ' + str(result_prob))
     V_SPACE(1)
-    st.subheader('Results For Each Label')
-    st.plotly_chart(fig, use_container_width=True)
