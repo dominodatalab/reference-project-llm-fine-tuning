@@ -1,5 +1,0 @@
-Flask
-Flask-Compress
-Flask-Cors
-jsonify
-uWSGI
