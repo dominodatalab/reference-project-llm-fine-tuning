@@ -112,10 +112,9 @@ def main():
     accuracy_test = trainer.predict(dataset_test).metrics["test_accuracy"]
     print("Accuracy on test: {:.2f}".format(accuracy_test))
 
-    trainer.save_model("finbert-sentiment/")
+    # Please change the location to where you want to save the model, /mnt/artifacts is available for git based projects
+    trainer.save_model("/mnt/artifacts/finbert-sentiment/")
 
-    with open('dominostats.json', 'w') as f:
-        f.write(json.dumps({"Accuracy": accuracy_test}))
     
 if __name__ == "__main__":
     main()
