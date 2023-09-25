@@ -51,7 +51,7 @@ RUN pip install datasets==2.10.1 transformers==4.26.1
 
 You also need to make sure that the hardware tier running the notebook or the fine-tuning script has sufficient resources. An *nvidia-low-g4dn-xlarge* hardware tier is recommended, as it provides GPU-acceleration that the fine-tunning can take advantage of.
 
-**Important!!** The version of Pytorch included in the above image is not compatible with GPUs with the Ampere architecture. Please check the PyTorch compatibility with your GPU before running this code. 
+**Important !!** The version of PyTorch included in the above image is not compatible with GPUs with the Ampere architecture. Please check the PyTorch compatibility with your GPU before running this code. 
 
 The following environment variables should also be set at the project level:
 
