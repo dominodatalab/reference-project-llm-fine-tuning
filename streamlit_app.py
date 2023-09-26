@@ -38,9 +38,9 @@ results = list()
 
 # Please change this URL to where your model API has been deployed or load the model from where it has been stored
 
-api_url = "https://se-demo.domino.tech:443/models/6511ef8c3f90ce7a69ed7ed0/v/1/model"
+api_url = "https://demo2.dominodatalab.com:443/models/65124411b03a930e975ea102/latest/model"
 
-api_token = "NZYHSbIhqQsWACR83T2GLS9BefdNIiOonJGUAzkay01PkKn96AdXO6ItlIwbMibg"
+api_token = "VpPZFx2CrKooOgYuI44Nh60Lagxbig4UpN0pni0SDvLrKM6pIR1UNG9ExydoqBhc"
 
 response = requests.post(api_url,
     auth=(
