@@ -4,7 +4,7 @@
 This template is licensed to Customer subject to the terms of the license agreement between Domino and the Customer on file.
 
 ## About this project
-In this project we demonstrate the use of a pre-trained Large Language Model (LLM) in Domino and the process of fine-tunning the model for a specific task.
+In this project we demonstrate the use of a pre-trained Large Language Model (LLM) in Domino and the process of fine-tuning the model for a specific task.
 
 ![](raw/latest/images/bert.png?inline=true)
 
