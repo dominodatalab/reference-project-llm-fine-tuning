@@ -48,13 +48,29 @@ This project requires the following [compute environments](https://docs.dominoda
 
 **Environment Base** 
 
-`quay.io/domino/compute-environment-images:ubuntu20-py3.9-r4.2-domino5.4-gpu`
+`quay.io/domino/pre-release-environments:project-hub-gpu.main.latest`
 
-**Dockerfile Instructions**
+**Pluggable Workspace Tools** 
 ```
-USER ubuntu
-RUN pip install datasets==2.10.1 transformers==4.26.1
+jupyterlab:
+  title: "JupyterLab"
+  iconUrl: "/assets/images/workspace-logos/jupyterlab.svg"
+  start: [ "/opt/domino/workspaces/jupyterlab/start" ]
+  httpProxy:
+    internalPath: "/{{ownerUsername}}/{{projectName}}/{{sessionPathComponent}}/{{runId}}/{{#if pathToOpen}}tree/{{pathToOpen}}{{/if}}"
+    port: 8888
+    rewrite: false
+    requireSubdomain: false
+vscode:
+ title: "vscode"
+ iconUrl: "/assets/images/workspace-logos/vscode.svg"
+ start: [ "/opt/domino/workspaces/vscode/start" ]
+ httpProxy:
+    port: 8888
+    requireSubdomain: false
 ```
+
+Please change the value in `start` according to your Domino version.
 
 
 You also need to make sure that the hardware tier running the notebook or the fine-tuning script has sufficient resources. An *nvidia-low-g4dn-xlarge* hardware tier is recommended, as it provides GPU-acceleration that the fine-tunning can take advantage of.
