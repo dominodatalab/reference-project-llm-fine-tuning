@@ -44,14 +44,18 @@ The **score.py** provides a scoring function with the following signature: `pred
 
 # Set up instructions
 
-This projects needs the following custom Docker container:
+This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
+**Environment Base** 
+
+`quay.io/domino/compute-environment-images:ubuntu20-py3.9-r4.2-domino5.4-gpu`
+
+**Dockerfile Instructions**
 ```
-FROM quay.io/domino/compute-environment-images:ubuntu20-py3.9-r4.2-domino5.4-gpu
-
 USER ubuntu
 RUN pip install datasets==2.10.1 transformers==4.26.1
 ```
+
 
 You also need to make sure that the hardware tier running the notebook or the fine-tuning script has sufficient resources. An *nvidia-low-g4dn-xlarge* hardware tier is recommended, as it provides GPU-acceleration that the fine-tunning can take advantage of.
 
