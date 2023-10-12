@@ -30,6 +30,8 @@ The assets available in this project are:
 
 # Model API calls
 
+Please ensure that all artifacts from the workspace after the fine tuning have been synced before starting the model API
+
 The **score.py** provides a scoring function with the following signature: `predict_sentiment(sentence)`. To test it, you could use the following JSON payload:
 
 ```
