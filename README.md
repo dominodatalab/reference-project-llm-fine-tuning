@@ -25,7 +25,7 @@ The assets available in this project are:
     * *lr* - learning rate for the fine-tunning process
     * *epochs* - number of training epochs
 * **all-data.csv** - A CSV file containing the Sentiment Analysis for Financial News dataset
-* **score.py** - A scoring function, which is used to deploy the fine-tunned model as a [Domino API](https://docs.dominodatalab.com/en/latest/user_guide/8dbc91/host-models-as-rest-apis/)
+* **score.py** - A scoring function, which is used to deploy the fine-tuned model as a [Domino API](https://docs.dominodatalab.com/en/latest/user_guide/8dbc91/host-models-as-rest-apis/)
 * **streamlit_app.py** - Code for the streamlit app. Please note that the app uses a model API, please change the model URL and token in this file after you have started the model API
 * **app.sh** - Launch instructions for the accompanying Streamlit app
 
