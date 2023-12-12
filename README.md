@@ -47,7 +47,7 @@ The **score.py** provides a scoring function with the following signature: `pred
 
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
-**Environment Base** 
+## Environment Requirements
 
 `quay.io/domino/pre-release-environments:project-hub-gpu.main.latest`
 
@@ -73,7 +73,7 @@ vscode:
 
 Please change the value in `start` according to your Domino version.
 
-
+## Hardware Requirements
 You also need to make sure that the hardware tier running the notebook or the fine-tuning script has sufficient resources. An *nvidia-low-g4dn-xlarge* hardware tier is recommended, as it provides GPU-acceleration that the fine-tunning can take advantage of.
 
 **Important !!** The version of PyTorch included in the above image is not compatible with GPUs with the Ampere architecture. Please check the PyTorch compatibility with your GPU before running this code. 
