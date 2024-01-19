@@ -36,7 +36,7 @@ class TestSentimentFinData(unittest.TestCase):
 
     def test_data_file_exists(self):
         """ Test if the data file exists """
-        data_file_path = '../all-data.csv'
+        data_file_path = '/mnt/code/all-data.csv'
         self.assertTrue(os.path.isfile(data_file_path), "Data file does not exist")
 
 if __name__ == '__main__':
